@@ -1,0 +1,13 @@
+import java.util.Date;
+
+public class LaunchDate1 {
+
+	public static void main(String[] args) 
+	{
+		//Date class of util package
+		Date date=new Date();//will return both date and time
+		System.out.println(date);
+		System.out.println(date.getTime());
+	}
+
+}

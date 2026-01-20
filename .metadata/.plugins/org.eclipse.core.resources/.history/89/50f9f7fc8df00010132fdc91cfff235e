@@ -1,0 +1,49 @@
+
+public class LaunchQuickSort {
+	
+	private static int findPivot(int[] array, int left, int right)
+	{
+		System.out.println(right);
+		int i = left-1, pivot = array[right];
+		for(int j=left; j<right; j++)
+		{
+			if(array[j] < pivot)
+			{
+				i++;
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+		int temp = array[right];
+		array[right] = array[i+1];
+		array[i+1] = temp;
+		return (i+1);
+	}
+	
+	private static void quickSort(int[] array,int left,int right)
+	{
+		int pivot = findPivot(array, left, right);
+		System.out.println("left" +left+"right"+ pivot);
+		if(right>left)
+		{
+			quickSort(array, left, pivot-1);
+			quickSort(array, pivot+1, right);
+		}
+	}
+
+	public static void main(String[] args) {
+		int []array = {6,2,5,3,9,1,4,10,8,7};
+		int size=array.length;
+		for(int ele:array)
+		{
+			System.out.print(ele + " ");
+		}
+		quickSort(array, 0, size-1);
+		System.out.println();
+		for(int ele:array)
+		{
+			System.out.print(ele + " ");
+		}
+	}
+}

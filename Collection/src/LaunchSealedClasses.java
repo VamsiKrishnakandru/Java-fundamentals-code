@@ -1,0 +1,51 @@
+sealed class A implements Runnable permits B,C
+{
+	@Override
+	public void run() {
+	}
+}
+final class B extends A //either final or sealed or non-sealed
+{
+	
+}
+sealed class C extends A permits D
+{
+	
+}
+non-sealed class D extends C//we cannot extend Class A
+{
+	
+}
+class E extends D //non-sealed classes can be extended freely
+{
+	
+}
+
+record Alien (int id, String name) //we can just have this first statement alone
+{
+	static int num; //we can create static variable
+	//int age; //instance variables need to specify above
+	//Canonical constructor
+//	public Alien(int id, String name)
+//	{
+//		if(id==0)
+//			throw new IllegalArgumentException("id cannot be zero");
+//		this.id = id;
+//		this.name = name;
+//	}
+	//compact canonical constructor
+	public Alien
+	{
+		if(id==0)
+			throw new IllegalArgumentException("id cannot be zero");
+	}
+}
+
+public class LaunchSealedClasses {
+
+	public static void main(String[] args) 
+	{
+		
+	}
+
+}

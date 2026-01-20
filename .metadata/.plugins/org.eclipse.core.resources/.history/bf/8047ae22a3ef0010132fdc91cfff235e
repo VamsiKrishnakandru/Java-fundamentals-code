@@ -1,0 +1,69 @@
+abstract class SamplePlane
+{
+	static String name;
+	static
+	{
+		name="Boeing";
+	}
+	abstract void planeAltitude();
+	abstract void planeDuration();
+	static void display()
+	{
+		System.out.println("Parent class static method");
+	}
+}
+class SamplePlane1 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println(name + " Plane1 is flying at high altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println(name + " Plane1 has medium duration");
+	}
+	static void display()
+	{
+		System.out.println("Child class static method");
+	}
+}
+class SamplePlane2 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println(name + " Plane2 is flying at low altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println(name + " Plane2 has long duration");
+	}
+}
+class SamplePlane3 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println(name + " Plane3 is flying at medium altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println(name + " Plane3 has short duration");
+	}
+}
+class SampleAirport
+{
+	public void show(SamplePlane ref)
+	{
+		ref.planeAltitude();
+		ref.planeDuration();
+	}
+}
+public class SamplePolymorphism {
+	public static void main(String[] args) 
+	{
+		SamplePlane p1 = new SamplePlane1();
+		SamplePlane1 p2 = new SamplePlane1();
+		SamplePlane1 p3 = new SamplePlane1();
+		SampleAirport a1 = new SampleAirport();
+		a1.show(p1);
+	}
+}

@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class SampleArrays {
+
+	public static void main(String[] args) 
+	{	
+		int[] a2 = {9,1,2,3,4};
+		int[][] a1 = new int[3][4];
+		a1[0]=new int[] {1,2,3};
+		a1[1]=new int[] {2,3,4,1};
+		a1[2]=new int[] {4,2,5,6};
+		for(int ele[]:a1)
+		{
+			for(int element:ele)
+			{
+				System.out.println(element);
+			}	
+		}
+		System.out.println(a1.getClass().getName());
+		System.out.println(a2.getClass().getName());
+		System.out.println(a2);
+		Arrays.sort(a2);
+		System.out.println(a2);
+		for(int ele:a2)
+		{
+			System.out.println(ele);
+		}
+	}
+}

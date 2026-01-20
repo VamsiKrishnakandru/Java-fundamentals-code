@@ -1,0 +1,30 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class LaunchDate2 {
+
+	public static void main(String[] args) 
+	{
+		//LocaleDate LocalTime LocalDateTime --> time
+		LocalDate date = LocalDate.now();
+		System.out.println(date);
+		int dayOfMonth = date.getDayOfMonth();
+		System.out.println(dayOfMonth);
+		int dayOfYear=date.getDayOfYear();
+		System.out.println("day of year: "+ dayOfYear);
+		int month=date.getMonthValue();
+		System.out.println(month);
+		System.out.println(dayOfMonth+"/"+month+"/"+date.getYear());
+		LocalDate dob=LocalDate.of(1994, 3, 8);
+		System.out.println(dob);
+		System.out.println("******************");
+		LocalTime time=LocalTime.now();
+		System.out.println(time);
+		int hour=time.getHour();
+		int minute=time.getMinute();
+		int seconds=time.getSecond();
+		int nano=time.getNano();
+		System.out.println(hour+" hour : "+minute+" minutes : "+seconds+ " seconds : "+nano+" nano seconds");
+	}
+
+}

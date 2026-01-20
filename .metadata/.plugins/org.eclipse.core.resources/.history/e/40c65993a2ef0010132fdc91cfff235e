@@ -1,0 +1,54 @@
+abstract class SamplePlane
+{
+	static String name;
+	static
+	{
+		name="Boeing";
+	}
+	abstract void planeAltitude();
+	abstract void planeDuration();
+}
+class SamplePlane1 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println("Plane1 is flying at high altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println("Plane1 has medium duration");
+	}
+}
+class SamplePlane2 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println("Plane2 is flying at low altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println("Plane2 has long duration");
+	}
+}
+class SamplePlane3 extends SamplePlane
+{
+	void planeAltitude()
+	{
+		System.out.println("Plane3 is flying at medium altitude");
+	}
+	void planeDuration()
+	{
+		System.out.println("Plane3 has short duration");
+	}
+}
+class SampleAirport
+{
+	
+}
+public class SamplePolymorphism {
+	public static void main(String[] args) 
+	{
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+
+public class HSBCBank {
+	int accountBal;
+	
+	public HSBCBank(int accountBal)
+	{
+		this.accountBal=accountBal;
+	}
+	public void withdrawal(int withdrawal)
+	{
+		accountBal=accountBal-withdrawal;
+	}
+	public void deposit(int deposit)
+	{
+		accountBal=accountBal+deposit;
+	}
+	public void checkBalance()
+	{
+		System.out.println("The Balance in the account is : "+ accountBal);
+	}
+}

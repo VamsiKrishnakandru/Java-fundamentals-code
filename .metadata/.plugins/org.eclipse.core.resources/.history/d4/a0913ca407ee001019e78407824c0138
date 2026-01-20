@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+public class LaunchStream1 {
+
+	public static void main(String[] args) 
+	{
+		Predicate<Integer> predi = new Predicate<>() {
+			public boolean test(Integer n)
+			{
+				System.out.println("filter: " + n);
+				return n % 2 == 1;
+			}
+		};
+		Function<Integer, Integer> func = new Function<>() {
+			public Integer apply(Integer n)
+			{
+				System.out.println("map: " + n);
+				return n * 2;
+			}
+		};
+		List<Integer> nums = new ArrayList<>(Arrays.asList(1, 3, 4, 6, 7, 9,10)); // odd -> double it -> sum it 
+		
+		Stream<Integer> stream1 = nums.stream(); //collection interface has default method stream.
+		nums.add(5); //we cannot directly in stream but adding in list will reflect in stream.
+		
+//		Stream<Integer> stream2 = stream1.filter(predi); //one value comes here all further ops are done for that value till forEach.
+//		Stream<Integer> stream3 = stream2.map(func);
+		
+		//shorter
+		Stream<Integer> stream2 = stream1.filter(n -> n % 2 == 1); //stream1 is consumed here and cannot be used anywhere.
+		Stream<Integer> stream3 = stream2.map(n -> n * 2);
+		int sum = stream3.reduce(0, (i,j) -> i+j);
+		System.out.println(sum);
+		
+		//stream3.forEach(n -> System.out.println(n)); //if we do not have this statement above statements will be skipped i.e, streams are lazy.
+		
+		
+		
+		System.out.println(nums);
+	}
+}

@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class LaunchEh2 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("App Started");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Enter the numerator for division");
+			int num1=scan.nextInt();
+			System.out.println("Enter the denominator for division");
+			int num2=scan.nextInt();
+			int res=num1/num2;
+			System.out.println("The result is "+ res);
+			System.out.println("Enter the size of an array");
+			int size=scan.nextInt();
+			int ar[]=new int[size];
+			System.out.println("Enter the element to be added in array");
+			int elem=scan.nextInt();
+			System.out.println("Enter the index / position at which elem has to be added");
+			int index=scan.nextInt();
+			ar[index]=elem;
+			System.out.println("Data added successfully");
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Enter proper denominator");
+		}
+		catch(NegativeArraySizeException e)
+		{
+			System.out.println("Please enter non negative int value");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Please be in your limits");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Some problem");
+		}
+		System.out.println("App terminated smoothly");
+	}
+}

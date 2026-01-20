@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class LaunchOptional 
+{
+	public static void main(String[] args)
+	{
+		List<String> courses = Arrays.asList("Java", "SpringBoot", "SpringAT", "Microservices");
+		Optional<String> optional = courses.stream().filter(str -> str.contains("Spring")).findFirst();
+//		if(optional.isPresent())
+//		{
+//			System.out.println(optional.get());
+//		}
+//		else
+//		{
+//			System.out.println("no data with given pattern");
+//		}
+		System.out.println(optional.orElse("Not found"));
+	}
+}

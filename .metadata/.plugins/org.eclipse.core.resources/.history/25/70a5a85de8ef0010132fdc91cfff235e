@@ -1,0 +1,28 @@
+
+public class LaunchInsertionSort {
+	public static void main(String[] args) {
+		int []array = {6,2,5,3,9,1,4,10,8,7};
+		int size=array.length;
+		for(int ele:array)
+		{
+			System.out.print(ele + " ");
+		}
+		for(int i=1;i<size-1;i++)
+		{
+			int j = i-1;
+			int k=array[i];
+			while(array[j]<k)
+			{
+				array[j+1]=array[j];
+				j=j-1;
+			}
+			array[j+1]=k;
+		}
+		System.out.println();
+		for(int ele:array)
+		{
+			System.out.print(ele + " ");
+		}
+	}
+
+}

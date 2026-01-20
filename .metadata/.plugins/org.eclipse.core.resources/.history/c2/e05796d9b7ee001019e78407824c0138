@@ -1,0 +1,16 @@
+import java.time.LocalDate;
+
+public class LaunchDate2 {
+
+	public static void main(String[] args) 
+	{
+		//LocaleDate LocalTime LocalDateTime --> time
+		LocalDate date = LocalDate.now();
+		System.out.println(date);
+		int dayOfMonth = date.getDayOfMonth();
+		System.out.println(dayOfMonth);
+		int dayOfYear=date.getDayOfYear();
+		System.out.println(dayOfYear);
+	}
+
+}

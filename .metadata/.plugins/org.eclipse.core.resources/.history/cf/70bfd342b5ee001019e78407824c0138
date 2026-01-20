@@ -1,0 +1,11 @@
+import java.sql.Date;
+
+public class LaunchDate1 {
+
+	public static void main(String[] args) 
+	{
+		 Date date=new Date();
+		 System.out.println(date);
+	}
+
+}

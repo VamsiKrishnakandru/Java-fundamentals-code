@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class LaunchSample1 {
+
+	public static void main(String[] args) 
+	{
+		String alarm = "";
+		int time;
+		System.out.println("Enter the time: ");
+		Scanner scan = new Scanner(System.in);
+		time = scan.nextInt();
+		alarm = switch(time) {
+			case 5,6,8,9 -> "Turn On";
+			case 4,7,10 -> "Turn Off";
+			default -> "Not applicable";
+		};
+		System.out.println(alarm);
+	}
+}

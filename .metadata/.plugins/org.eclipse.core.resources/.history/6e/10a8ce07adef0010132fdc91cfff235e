@@ -1,0 +1,57 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+class SampleFlipkartApp
+{
+	SampleDeliveryPartner ref;
+	public SampleFlipkartApp(SampleDeliveryPartner ref)
+	{
+		System.out.println("Dependency injection using constructor");
+		this.ref=ref;
+	}
+	public SampleFlipkartApp()
+	{
+	}
+	public void setDeliveryPartner(SampleDeliveryPartner ref)
+	{
+		System.out.println("Dependency injection using setter");
+		this.ref=ref;
+	}
+	public Stream<Integer> display()
+	{
+		List<Integer> yu = Arrays.asList(1,2,3,45,53);
+		Stream<Integer> tod = yu.stream().map(a->a*6);
+		ref.showDetails();
+		return tod;
+	}
+}
+interface SampleDeliveryPartner
+{
+	void showDetails();
+}
+class Dtdc implements SampleDeliveryPartner
+{
+	public void showDetails()
+	{
+		System.out.println("Dtdc has delivered your courier");
+	}
+}
+class BlueDart implements SampleDeliveryPartner
+{
+	public void showDetails()
+	{
+		System.out.println("BlueDart has delivered your courier");
+	}
+}
+public class SampleLosseCoupling {
+
+	public static void main(String[] args) 
+	{
+		SampleFlipkartApp s1 = new SampleFlipkartApp(new Dtdc());
+		s1.display();
+		SampleFlipkartApp s2 = new SampleFlipkartApp();
+		s2.setDeliveryPartner(new BlueDart());
+		System.out.println(s2.display());
+	}
+}

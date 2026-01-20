@@ -1,0 +1,41 @@
+class MyCar implements Runnable
+{
+	@Override
+	public void run()
+	{
+		try
+		{
+			System.out.println(Thread.currentThread().getName() + " has entered parking lot");
+			Thread.sleep(4000);
+			System.out.println(Thread.currentThread().getName() + " has entered into car");
+			Thread.sleep(4000);
+			System.out.println(Thread.currentThread().getName() + " has started to dirve car");
+			Thread.sleep(4000);
+			System.out.println(Thread.currentThread().getName() + " has come back and parked the car");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception occured");
+		}
+	}
+}
+public class LaunchThread6 {
+
+	public static void main(String[] args) 
+	{
+		MyCar car = new MyCar();
+		
+		Thread t1=new Thread(car);
+		Thread t2 = new Thread(car);
+		Thread t3 = new Thread(car);
+		
+		t1.setName("RAMESH");
+		t2.setName("SURESH");
+		t3.setName("DINESH");
+		
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+
+}

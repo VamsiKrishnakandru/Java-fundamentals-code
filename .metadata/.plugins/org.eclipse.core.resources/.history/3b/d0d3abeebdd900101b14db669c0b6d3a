@@ -1,0 +1,11 @@
+
+public class LaunchGen3 {
+
+	public static void main(String[] args) 
+	{
+		//wild card
+		//upperbound
+		//lowerbound
+	}
+
+}

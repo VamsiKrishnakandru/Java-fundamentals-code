@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class Atm
+{
+	int accNo = 1111;
+	int password=2222;
+	
+	int acc;
+	int pw;
+	
+	public void input()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Kindly Enter the user name: ");
+		acc=sc.nextInt();
+		System.out.println("Kindly Enter the password: ");
+		pw=sc.nextInt();
+	}
+	
+	public void verify()
+	{
+		if(accNo == acc && password==pw)
+		{
+			System.out.println("Credentials Matched! You can go further with Transaction!");
+		}
+		else
+		{
+			System.out.println("Invalid Credentials! I hope You're not legend");
+		}
+	}
+}
+class Bank
+{
+	public void initiate()
+	{
+		Atm atm=new Atm();
+		atm.input();
+		atm.verify();
+	}
+}
+public class LaunchEh7 
+{
+	public static void main(String[] args) 
+	{
+		Bank bank = new Bank();
+		bank.initiate();
+	}
+}

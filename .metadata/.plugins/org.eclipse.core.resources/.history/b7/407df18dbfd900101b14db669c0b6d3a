@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class LaunchCollections {
+
+	public static void main(String[] args) 
+	{
+		ArrayList<Integer> al = new ArrayList<>();
+		
+		al.add(100);
+		al.add(50);
+		al.add(150);
+		al.add(25);
+		al.add(75);
+		al.add(125);
+		
+		System.out.println(al);
+		
+		Collections.sort(al); //utility class for collection
+		System.out.println(al);
+		Collections.shuffle(al);
+		System.out.println(al);
+		System.out.println("***************");
+		
+		ArrayList<String> al2 = new ArrayList<>();
+		
+		al2.add("Java");
+		al2.add("Alien");
+		al2.add("Telusko");
+		al2.add("SQL");
+		
+		System.out.println(al2);
+		Collections.sort(al2);
+		System.out.println(al2);
+	}
+
+}

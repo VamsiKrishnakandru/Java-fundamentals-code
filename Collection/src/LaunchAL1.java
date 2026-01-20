@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+public class LaunchAL1 {
+
+	public static void main(String[] args) 
+	{
+		ArrayList aList = new ArrayList();
+		
+		aList.add(44);
+		aList.add("Harsh");
+		aList.add(454.4);
+		aList.add(true);
+		
+		System.out.println(aList);
+		aList.add(5);
+		
+		System.out.println(aList);
+		System.out.println("***************************************");
+		ArrayList aList2 = new ArrayList();
+		
+		aList2.add(44);
+		aList2.add(454);
+		aList2.add(454.4);
+		aList2.add(65);
+		
+		System.out.println(aList2);
+		
+		aList2.addAll(aList);
+		System.out.println(aList2);
+		
+		aList2.add(2, "Siddhu");
+		System.out.println(aList2);
+	}
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class LaunchEh1 
+{
+
+	public static void main(String[] args) 
+	{
+		System.out.println("Maths App Started");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Enter the numerator for division");
+			int num1=scan.nextInt();
+			System.out.println("Enter the denominator for division");
+			int num2=scan.nextInt();
+			int res=num1/num2;
+			System.out.println("The result is "+ res);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Enter non zero denominator");
+		}
+		System.out.println("Maths App ended smoothly");
+	}
+
+}

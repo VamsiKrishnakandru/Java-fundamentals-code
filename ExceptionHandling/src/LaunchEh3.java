@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+class Demo
+{
+	public void division()
+	{
+		System.out.println("Demo start");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Enter the numerator for division");
+			int num1=scan.nextInt();
+			System.out.println("Enter the denominator for division");
+			int num2=scan.nextInt();
+			int res=num1/num2;
+			System.out.println("The result is "+ res);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception is caught in demo it self");
+		}
+
+		System.out.println("Demo endded");
+	}
+}
+public class LaunchEh3 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("App Started");
+		
+		Demo demo = new Demo();
+		
+		demo.division();
+		
+		System.out.println("App smoothly terminated - Main App");
+	}
+}

@@ -1,0 +1,36 @@
+class SampleCar
+{
+	String name;
+	int Mfyear;
+	public SampleCar(String name, int mfyear) {
+		super();
+		this.name = name;
+		Mfyear = mfyear;
+	}
+	public void display()
+	{
+		System.out.println("Car name: " + name + ", Year of Manufacturing: " + Mfyear);
+	}
+	public void display(String name)
+	{
+		System.out.println("Year of Manufacturing: " + Mfyear);
+	}
+	public double size(int length, double width)
+	{
+		return length*width;
+	}
+	public double size(double width, int length)
+	{
+		return length*width;
+	}
+}
+
+public class SampleMethodOverloading {
+	public static void main(String[] args) 
+	{
+		SampleCar car1 = new SampleCar("Maruthi", 2011);
+		car1.display();
+		car1.display("Maruthi");
+		
+	}
+}
