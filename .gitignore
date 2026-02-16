@@ -1,6 +1,7 @@
 /.metadata
 *.log
 *.lock
+*.class
 /.org.eclipse*
 /bin/
 /obj/
